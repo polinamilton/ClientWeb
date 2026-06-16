@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="500" viewBox="0 0 680 500">
+  <path id="pen" fill="none" stroke="#c94040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <script type="text/javascript">
+  <![CDATA[
+  (function(){
+    var scx=520, scy=82, sr=68;
+    function starPt(i){ var a=Math.PI*(-0.5+i*0.4); return {x:scx+sr*Math.cos(a), y:scy+sr*Math.sin(a)}; }
+    var sp=[0,2,4,1,3,0].map(function(i){return starPt(i);});
+
+    function sampleC(x0,y0,x1,y1,x2,y2,x3,y3,n){
+      var pts=[];
+      for(var i=0;i<=n;i++){
+        var t=i/n,mt=1-t;
+        pts.push({
+          x:mt*mt*mt*x0+3*mt*mt*t*x1+3*mt*t*t*x2+t*t*t*x3,
+          y:mt*mt*mt*y0+3*mt*mt*t*y1+3*mt*t*t*y2+t*t*t*y3
+        });
+      }
+      return pts;
+    }
+    function sampleQ(x0,y0,x1,y1,x2,y2,n){
+      var pts=[];
+      for(var i=0;i<=n;i++){
+        var t=i/n,mt=1-t;
+        pts.push({x:mt*mt*x0+2*mt*t*x1+t*t*x2,y:mt*mt*y0+2*mt*t*y1+t*t*y2});
+      }
+      return pts;
+    }
+
+    var s=[];
+    s.push({x:295,y:95});
+    s=s.concat(sampleC(295,95, 265,45, 140,42, 108,115, 30).slice(1));
+    s=s.concat(sampleC(108,115, 80,178, 128,228, 200,228, 25).slice(1));
+    s=s.concat(sampleC(200,228, 248,228, 278,205, 282,178, 20).slice(1));
+    s=s.concat(sampleC(282,178, 284,220, 282,270, 278,310, 25).slice(1));
+    s=s.concat(sampleC(278,310, 272,365, 235,415, 185,428, 25).slice(1));
+    s=s.concat(sampleC(185,428, 128,442, 72,418, 58,378, 25).slice(1));
+    s=s.concat(sampleC(58,378, 44,338, 72,295, 128,282, 25).slice(1));
+    s=s.concat(sampleC(128,282, 178,270, 232,285, 255,315, 20).slice(1));
+    s=s.concat(sampleC(255,315, 268,338, 278,320, 278,295, 15).slice(1));
+    s=s.concat(sampleC(278,295, 280,268, 282,240, 284,210, 15).slice(1));
+    s=s.concat(sampleC(284,210, 350,175, 440,128, sp[0].x,sp[0].y, 40).slice(1));
+    for(var i=0;i<5;i++){
+      s=s.concat(sampleQ(
+        sp[i].x,sp[i].y,
+        (sp[i].x+sp[i+1].x)/2+(i%2?5:-5),
+        (sp[i].y+sp[i+1].y)/2+(i%2?-5:5),
+        sp[i+1].x,sp[i+1].y,
+        18
+      ).slice(1));
+    }
+
+    // Build path d string
+    var d = 'M '+s[0].x.toFixed(2)+','+s[0].y.toFixed(2);
+    for(var j=1;j<s.length;j++){
+      d += ' L '+s[j].x.toFixed(2)+','+s[j].y.toFixed(2);
+    }
+
+    var el = document.getElementById('pen');
+    el.setAttribute('d', d);
+
+    var len = el.getTotalLength();
+    el.style.strokeDasharray = len;
+    el.style.strokeDashoffset = len;
+    el.style.transition = 'stroke-dashoffset 7s cubic-bezier(0.38,0,0.18,1) 0.3s';
+
+    // Trigger animation after a tick
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        el.style.strokeDashoffset = '0';
+      });
+    });
+  })();
+  ]]>
+  </script>
+</svg>

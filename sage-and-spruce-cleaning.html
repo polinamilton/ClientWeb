@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sage &amp; Spruce Cleaning Co. | Eco-Friendly Home &amp; Office Cleaning in Austin, TX</title>
+<meta name="description" content="Sage &amp; Spruce Cleaning Co. provides eco-friendly residential, commercial, deep, move-in/move-out, and post-construction cleaning across Austin, TX. Insured, vetted, and backed by a 100% satisfaction guarantee." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23456B3F'%3E%3Cpath d='M5 21c0-9 4-16 14-18-1 10-5 16-14 18z'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          forest: {
+            50: '#F4F7F2',
+            100: '#E4ECE0',
+            200: '#C9DBC2',
+            300: '#A6C49C',
+            400: '#7FA873',
+            500: '#5E8C55',
+            600: '#456B3F',
+            700: '#33502F',
+            800: '#263B23',
+            900: '#1B2B19'
+          },
+          sand: {
+            50: '#FCFAF6',
+            100: '#F7F2E9',
+            200: '#EFE6D4'
+          },
+          terracotta: {
+            100: '#FBE4D8',
+            300: '#EFB29A',
+            400: '#E59574',
+            500: '#DB7C57',
+            600: '#C2643F'
+          }
+        },
+        fontFamily: {
+          display: ['Playfair Display', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  :root { --ease-elegant: cubic-bezier(0.16, 1, 0.3, 1); }
+
+  body { font-feature-settings: "liga" 1, "kern" 1; }
+
+  /* Decorative blobs */
+  .blob {
+    position: absolute;
+    border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+    filter: blur(60px);
+    animation: blobMove 18s var(--ease-elegant) infinite;
+  }
+  @keyframes blobMove {
+    0%, 100% { transform: translate(0,0) scale(1); border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%; }
+    33% { transform: translate(20px,-30px) scale(1.06); border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
+    66% { transform: translate(-25px,25px) scale(0.96); border-radius: 35% 65% 50% 50% / 60% 40% 60% 40%; }
+  }
+
+  /* Floating cards */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
+  }
+  .float { animation: floatY 6s ease-in-out infinite; }
+  .float-delay { animation-delay: 1.5s; }
+  .float-delay-2 { animation-delay: 3s; }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s var(--ease-elegant), transform 0.8s var(--ease-elegant);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* Marquee */
+  .marquee { overflow: hidden; }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+  /* FAQ accordion */
+  .faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.4s var(--ease-elegant);
+  }
+  .faq-item[data-open="true"] .faq-panel { grid-template-rows: 1fr; }
+  .faq-panel > div { overflow: hidden; }
+  .faq-icon { transition: transform 0.3s var(--ease-elegant); }
+  .faq-item[data-open="true"] .faq-icon { transform: rotate(180deg); }
+
+  /* Mobile menu */
+  .mobile-panel { transition: transform 0.4s var(--ease-elegant); }
+  .mobile-backdrop { transition: opacity 0.4s var(--ease-elegant); }
+  #mobile-menu.is-open .mobile-panel { transform: translateX(0); }
+  #mobile-menu.is-open .mobile-backdrop { opacity: 1; }
+
+  /* Stat numbers */
+  .stat-number { font-variant-numeric: tabular-nums; }
+
+  /* Focus states */
+  :focus-visible { outline: 2px solid #5E8C55; outline-offset: 3px; border-radius: 2px; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .blob, .float, .float-delay, .float-delay-2, .marquee-track { animation: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    * { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body id="top" class="bg-sand-50 font-sans text-forest-800 antialiased pb-20 md:pb-0">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+
+<!-- Header -->
+<header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex items-center justify-between gap-4 rounded-2xl border border-forest-100 bg-sand-50/80 px-4 py-3 shadow-sm backdrop-blur-md sm:px-6">
+      <a href="#top" class="flex items-center gap-2 font-display text-lg font-semibold text-forest-900">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-forest-600 text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+            <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+            <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+          </svg>
+        </span>
+        Sage &amp; Spruce
+      </a>
+
+      <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <a href="#services" class="text-sm font-medium text-forest-700 transition-colors hover:text-forest-900">Services</a>
+        <a href="#process" class="text-sm font-medium text-forest-700 transition-colors hover:text-forest-900">Process</a>
+        <a href="#pricing" class="text-sm font-medium text-forest-700 transition-colors hover:text-forest-900">Pricing</a>
+        <a href="#reviews" class="text-sm font-medium text-forest-700 transition-colors hover:text-forest-900">Reviews</a>
+        <a href="#faq" class="text-sm font-medium text-forest-700 transition-colors hover:text-forest-900">FAQ</a>
+      </nav>
+
+      <div class="hidden items-center gap-4 lg:flex">
+        <a href="tel:+15125550148" class="text-sm font-semibold text-forest-800 transition-colors hover:text-forest-900">(512) 555-0148</a>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-terracotta-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-terracotta-600 hover:shadow-md cursor-pointer">
+          Get a Free Quote
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="flex h-10 w-10 items-center justify-center rounded-full text-forest-800 transition-colors hover:bg-forest-100 lg:hidden cursor-pointer" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+  <div class="mobile-backdrop absolute inset-0 bg-forest-900/50 opacity-0" data-menu-close></div>
+  <div class="mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm translate-x-full flex-col bg-sand-50 p-6 shadow-xl">
+    <div class="flex items-center justify-between">
+      <span class="flex items-center gap-2 font-display text-lg font-semibold text-forest-900">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-forest-600 text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+            <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+            <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+          </svg>
+        </span>
+        Sage &amp; Spruce
+      </span>
+      <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full text-forest-800 transition-colors hover:bg-forest-100 cursor-pointer" aria-label="Close menu" data-menu-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mt-10 flex flex-col gap-2" aria-label="Mobile">
+      <a href="#services" class="rounded-xl px-4 py-3 font-display text-lg text-forest-800 transition-colors hover:bg-forest-100" data-menu-close>Services</a>
+      <a href="#process" class="rounded-xl px-4 py-3 font-display text-lg text-forest-800 transition-colors hover:bg-forest-100" data-menu-close>Process</a>
+      <a href="#pricing" class="rounded-xl px-4 py-3 font-display text-lg text-forest-800 transition-colors hover:bg-forest-100" data-menu-close>Pricing</a>
+      <a href="#reviews" class="rounded-xl px-4 py-3 font-display text-lg text-forest-800 transition-colors hover:bg-forest-100" data-menu-close>Reviews</a>
+      <a href="#faq" class="rounded-xl px-4 py-3 font-display text-lg text-forest-800 transition-colors hover:bg-forest-100" data-menu-close>FAQ</a>
+    </nav>
+    <div class="mt-auto space-y-4">
+      <a href="tel:+15125550148" class="flex items-center justify-center gap-2 rounded-full border border-forest-300 py-3 text-sm font-semibold text-forest-800 cursor-pointer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+          <path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 4.3 2h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>
+        </svg>
+        (512) 555-0148
+      </a>
+      <a href="#contact" class="flex items-center justify-center gap-2 rounded-full bg-terracotta-500 py-3 text-sm font-semibold text-white shadow-sm cursor-pointer" data-menu-close>
+        Get a Free Quote
+      </a>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- Hero -->
+<section class="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+  <div class="blob -left-32 -top-32 h-96 w-96 bg-forest-200/50" aria-hidden="true"></div>
+  <div class="blob -right-40 top-40 h-[28rem] w-[28rem] bg-terracotta-100/70" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid items-center gap-16 lg:grid-cols-2">
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 rounded-full border border-forest-200 bg-white/70 px-4 py-1.5 text-sm font-medium text-forest-700">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4">
+            <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+            <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+          </svg>
+          Locally owned &middot; Austin, TX
+        </span>
+
+        <h1 class="mt-6 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-forest-900 sm:text-5xl lg:text-6xl">
+          Spotless spaces,<br />
+          <span class="italic text-forest-600">sustainably</span> done.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-forest-700">
+          Sage &amp; Spruce brings vetted, insured cleaning pros and plant-based products to homes and offices across Greater Austin &mdash; so your space feels fresh without the harsh chemicals.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="group inline-flex items-center gap-2 rounded-full bg-terracotta-500 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-terracotta-600 hover:shadow-lg cursor-pointer">
+            Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a href="#services" class="inline-flex items-center gap-2 rounded-full border border-forest-300 bg-white/60 px-7 py-3.5 text-sm font-semibold text-forest-800 transition-all duration-200 hover:border-forest-400 hover:bg-white cursor-pointer">
+            Explore Services
+          </a>
+        </div>
+
+        <div class="mt-10 flex items-center gap-4">
+          <div class="flex -space-x-3" aria-hidden="true">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-sand-50 bg-forest-200 font-display text-sm font-semibold text-forest-800">JM</span>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-sand-50 bg-terracotta-200 font-display text-sm font-semibold text-forest-800">AR</span>
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-sand-50 bg-forest-300 font-display text-sm font-semibold text-forest-800">SK</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1 text-terracotta-500" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            </div>
+            <p class="text-sm text-forest-600">Trusted by <span class="font-semibold text-forest-800">8,500+</span> Austin homes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal relative" style="--reveal-delay:.15s">
+        <div class="relative mx-auto aspect-[4/5] w-full max-w-md">
+          <div class="absolute inset-0 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-forest-100 via-sand-100 to-terracotta-100 shadow-xl ring-1 ring-forest-200/60">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 18% 20%, rgba(94,140,85,0.30) 0, transparent 35%), radial-gradient(circle at 82% 75%, rgba(219,124,87,0.30) 0, transparent 40%);"></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="absolute inset-0 m-auto h-48 w-48 text-forest-600/20">
+              <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+              <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+            </svg>
+          </div>
+
+          <div class="float absolute -left-4 top-10 w-48 rounded-2xl border border-forest-100 bg-white/90 p-4 shadow-lg backdrop-blur sm:-left-10">
+            <p class="text-xs font-semibold uppercase tracking-wide text-forest-500">Today's Visit</p>
+            <p class="mt-1 font-display text-lg text-forest-900">Deep Clean</p>
+            <ul class="mt-3 space-y-1.5 text-sm text-forest-700">
+              <li class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg>
+                Kitchen &amp; appliances
+              </li>
+              <li class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg>
+                Bathrooms &amp; grout
+              </li>
+              <li class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg>
+                Floors &amp; baseboards
+              </li>
+            </ul>
+          </div>
+
+          <div class="float float-delay-2 absolute -right-4 bottom-24 flex items-center gap-3 rounded-2xl border border-forest-100 bg-white/90 px-4 py-3 shadow-lg backdrop-blur sm:-right-8">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-terracotta-100 text-terracotta-600">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            </div>
+            <div>
+              <p class="font-display text-lg leading-none text-forest-900">4.9/5</p>
+              <p class="text-xs text-forest-600">1,200+ reviews</p>
+            </div>
+          </div>
+
+          <div class="float float-delay absolute left-6 bottom-6 flex items-center gap-2 rounded-full border border-forest-100 bg-forest-700 px-4 py-2 text-sm font-medium text-sand-50 shadow-lg sm:left-10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4">
+              <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+              <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+            </svg>
+            Eco-certified products
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee border-y border-forest-700/60 bg-forest-700 py-4 text-sand-50">
+  <div class="marquee-track gap-12 whitespace-nowrap text-sm font-medium uppercase tracking-widest">
+    <div class="flex items-center gap-12 pr-12">
+      <span>Austin</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+      <span>Round Rock</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+      <span>Cedar Park</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+      <span>Pflugerville</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+      <span>Georgetown</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+      <span>Leander</span>
+      <span class="text-forest-300" aria-hidden="true">&#10070;</span>
+    </div>
+    <div class="flex items-center gap-12 pr-12" aria-hidden="true">
+      <span>Austin</span>
+      <span class="text-forest-300">&#10070;</span>
+      <span>Round Rock</span>
+      <span class="text-forest-300">&#10070;</span>
+      <span>Cedar Park</span>
+      <span class="text-forest-300">&#10070;</span>
+      <span>Pflugerville</span>
+      <span class="text-forest-300">&#10070;</span>
+      <span>Georgetown</span>
+      <span class="text-forest-300">&#10070;</span>
+      <span>Leander</span>
+      <span class="text-forest-300">&#10070;</span>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<section class="py-16 sm:py-20" aria-label="Company stats">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
+      <div>
+        <p class="stat-number font-display text-4xl font-semibold text-forest-900 sm:text-5xl"><span data-count-to="12">0</span>+</p>
+        <p class="mt-2 text-sm font-medium text-forest-600">Years of Experience</p>
+      </div>
+      <div>
+        <p class="stat-number font-display text-4xl font-semibold text-forest-900 sm:text-5xl"><span data-count-to="8500">0</span>+</p>
+        <p class="mt-2 text-sm font-medium text-forest-600">Homes Cleaned</p>
+      </div>
+      <div>
+        <p class="stat-number font-display text-4xl font-semibold text-forest-900 sm:text-5xl"><span data-count-to="99">0</span>%</p>
+        <p class="mt-2 text-sm font-medium text-forest-600">Satisfaction Rate</p>
+      </div>
+      <div>
+        <p class="stat-number font-display text-4xl font-semibold text-forest-900 sm:text-5xl"><span data-count-to="4.9" data-decimals="1">0</span>/5</p>
+        <p class="mt-2 text-sm font-medium text-forest-600">Average Rating</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="bg-forest-50/60 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">What We Do</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">Cleaning services for every space</h2>
+      <p class="mt-4 text-lg text-forest-700">From a quick weekly refresh to a full move-out deep clean, our team brings the same eco-friendly standard to every job.</p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:0s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <path d="M3 11.5L12 4l9 7.5"/>
+            <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/>
+            <path d="M9.5 20v-5.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V20"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Residential Cleaning</h3>
+        <p class="mt-2 text-forest-700">Weekly, biweekly, or one-time cleaning tailored to your home and routine.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:.05s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <path d="M11 3l1.2 3.4L15.5 7l-3.3 1.6L11 12l-1.2-3.4L6.5 7l3.3-1.6L11 3z"/>
+            <path d="M17.5 13l.8 2.2L20.5 16l-2.2.8-.8 2.2-.8-2.2L14.5 16l2.2-.8.8-2.2z"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Deep Cleaning</h3>
+        <p class="mt-2 text-forest-700">Top-to-bottom detail clean for move-ins, spring resets, or special occasions.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:.1s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <path d="M21 8l-9-4.5L3 8l9 4.5L21 8z"/>
+            <path d="M3 8v8l9 4.5 9-4.5V8"/>
+            <path d="M12 12.5V21"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Move-In / Move-Out</h3>
+        <p class="mt-2 text-forest-700">Leave your old place spotless or start fresh in your new one, deposit-ready.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:0s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <rect x="4" y="3" width="9" height="18" rx="1"/>
+            <rect x="15" y="9" width="5" height="12" rx="1"/>
+            <path d="M7.5 7h2M7.5 11h2M7.5 15h2M17 13h0M17 17h0"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Office &amp; Commercial</h3>
+        <p class="mt-2 text-forest-700">Flexible after-hours cleaning for offices, studios, and retail spaces.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:.05s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"/>
+            <path d="M4 12l8 4.5 8-4.5"/>
+            <path d="M4 16l8 4.5 8-4.5"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Carpet &amp; Upholstery</h3>
+        <p class="mt-2 text-forest-700">Steam cleaning and stain removal that restores fabric and extends its life.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group rounded-3xl border border-forest-100 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-forest-300 hover:shadow-xl" style="--reveal-delay:.1s">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-100 text-forest-600 transition-colors duration-300 group-hover:bg-forest-600 group-hover:text-sand-50">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+            <path d="M4 7h16"/>
+            <path d="M9 7V4.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V7"/>
+            <path d="M6 7l1 12.5a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5L18 7"/>
+            <path d="M10 11v6M14 11v6"/>
+          </svg>
+        </div>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Post-Construction</h3>
+        <p class="mt-2 text-forest-700">Dust, debris, and residue removal so your space is move-in ready.</p>
+        <a href="#contact" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-terracotta-600">
+          Get a quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">How It Works</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">Booking a clean takes less than 2 minutes</h2>
+      <p class="mt-4 text-lg text-forest-700">No phone tag, no surprise fees &mdash; just a simple process from first booking to a spotless space.</p>
+    </div>
+
+    <div class="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="pointer-events-none absolute top-7 left-0 right-0 hidden h-px bg-forest-200 lg:block" aria-hidden="true"></div>
+
+      <div class="reveal relative" style="--reveal-delay:0s">
+        <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-sand-50 font-display text-xl font-semibold text-forest-700 ring-1 ring-forest-200">01</span>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Tell Us About Your Space</h3>
+        <p class="mt-2 text-forest-700">Answer a few quick questions about your home or office and the clean you need.</p>
+      </div>
+
+      <div class="reveal relative" style="--reveal-delay:.08s">
+        <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-sand-50 font-display text-xl font-semibold text-forest-700 ring-1 ring-forest-200">02</span>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Get Matched With a Pro</h3>
+        <p class="mt-2 text-forest-700">We pair you with a vetted, insured cleaner from our local Austin team.</p>
+      </div>
+
+      <div class="reveal relative" style="--reveal-delay:.16s">
+        <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-sand-50 font-display text-xl font-semibold text-forest-700 ring-1 ring-forest-200">03</span>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Enjoy Your Clean Space</h3>
+        <p class="mt-2 text-forest-700">Your pro arrives on time, brings their own supplies, and leaves every corner spotless.</p>
+      </div>
+
+      <div class="reveal relative" style="--reveal-delay:.24s">
+        <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-sand-50 font-display text-xl font-semibold text-forest-700 ring-1 ring-forest-200">04</span>
+        <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">Set It &amp; Forget It</h3>
+        <p class="mt-2 text-forest-700">Schedule recurring visits and skip, pause, or reschedule anytime &mdash; no contracts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-forest-700 py-20 text-sand-50 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid items-center gap-16 lg:grid-cols-2">
+      <div class="reveal order-2 lg:order-1">
+        <p class="text-sm font-semibold uppercase tracking-widest text-forest-300">Why Sage &amp; Spruce</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold sm:text-4xl">Cleaning you can feel good about</h2>
+
+        <div class="mt-10 grid gap-8 sm:grid-cols-2">
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-600 text-terracotta-300">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6"><path d="M12 3c4 5 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 3-7 7-12z"/></svg>
+            </div>
+            <h3 class="mt-4 font-display text-lg font-semibold text-sand-50">Plant-Based &amp; Non-Toxic</h3>
+            <p class="mt-2 text-forest-100/80">Every product we use is safe for kids, pets, and the planet.</p>
+          </div>
+
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-600 text-terracotta-300">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+                <path d="M12 3l8 3.5v5c0 5-3.4 8.5-8 9.5-4.6-1-8-4.5-8-9.5v-5z"/>
+                <path d="M8.5 12l2.5 2.5L16 9.5"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 font-display text-lg font-semibold text-sand-50">Background-Checked &amp; Insured</h3>
+            <p class="mt-2 text-forest-100/80">Every cleaner is vetted, bonded, and fully insured before they step inside.</p>
+          </div>
+
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-600 text-terracotta-300">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M8.5 12.5l2.5 2.5 4.5-5"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 font-display text-lg font-semibold text-sand-50">100% Satisfaction Guarantee</h3>
+            <p class="mt-2 text-forest-100/80">Not happy with your clean? We'll re-clean it free within 24 hours.</p>
+          </div>
+
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-600 text-terracotta-300">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2"/>
+              </svg>
+            </div>
+            <h3 class="mt-4 font-display text-lg font-semibold text-sand-50">Flexible Scheduling</h3>
+            <p class="mt-2 text-forest-100/80">Weekly, biweekly, monthly, or one-time &mdash; change anytime, no contracts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal order-1 lg:order-2" style="--reveal-delay:.1s">
+        <div class="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-forest-800 ring-1 ring-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&h=1125&q=80"
+            alt="Eco-friendly cleaning supplies including reusable cloths, natural soap, and a wooden scrub brush arranged on a countertop"
+            class="h-full w-full object-cover"
+            width="900" height="1125"
+            loading="lazy" decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="reviews" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">Reviews</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">What our clients say</h2>
+      <div class="mt-4 flex items-center justify-center gap-1 text-terracotta-500" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+      </div>
+      <p class="mt-1 text-sm text-forest-600">4.9 out of 5, based on 1,200+ reviews</p>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-3">
+      <figure class="reveal flex h-full flex-col justify-between rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" style="--reveal-delay:0s">
+        <div>
+          <div class="flex gap-1 text-terracotta-500" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-forest-800">
+            <p>&ldquo;Sage &amp; Spruce has been cleaning our home biweekly for over a year. They're punctual, thorough, and use products that don't bother my daughter's allergies.&rdquo;</p>
+          </blockquote>
+        </div>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-forest-100 font-display text-sm font-semibold text-forest-700">SM</div>
+          <div>
+            <p class="font-semibold text-forest-900">Sarah M.</p>
+            <p class="text-sm text-forest-600">Austin, TX</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal flex h-full flex-col justify-between rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" style="--reveal-delay:.08s">
+        <div>
+          <div class="flex gap-1 text-terracotta-500" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-forest-800">
+            <p>&ldquo;We switched our office cleaning to Sage &amp; Spruce and the difference was immediate. Reliable, professional, and our space always smells fresh &mdash; never harsh chemicals.&rdquo;</p>
+          </blockquote>
+        </div>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-forest-100 font-display text-sm font-semibold text-forest-700">JT</div>
+          <div>
+            <p class="font-semibold text-forest-900">James T.</p>
+            <p class="text-sm text-forest-600">Round Rock, TX</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal flex h-full flex-col justify-between rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" style="--reveal-delay:.16s">
+        <div>
+          <div class="flex gap-1 text-terracotta-500" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M12 2.5l2.9 6 6.6.7-4.8 4.6 1.2 6.6L12 17l-5.9 3.4 1.2-6.6L2.5 9.2l6.6-.7z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-forest-800">
+            <p>&ldquo;Booking a move-out clean saved us so much stress. The team got our full deposit back &mdash; the apartment looked brand new when they were done.&rdquo;</p>
+          </blockquote>
+        </div>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-full bg-forest-100 font-display text-sm font-semibold text-forest-700">MC</div>
+          <div>
+            <p class="font-semibold text-forest-900">Maria &amp; Carlos R.</p>
+            <p class="text-sm text-forest-600">Cedar Park, TX</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="bg-forest-50/60 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">Pricing</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">Simple, transparent pricing</h2>
+      <p class="mt-4 text-lg text-forest-700">Choose the plan that fits, then customize details with your cleaning pro.</p>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-3 lg:items-start">
+      <div class="reveal flex h-full flex-col rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" style="--reveal-delay:0s">
+        <h3 class="font-display text-xl font-semibold text-forest-900">Essential Clean</h3>
+        <p class="mt-2 text-sm text-forest-600">For regular upkeep &amp; maintenance</p>
+        <p class="mt-6"><span class="font-display text-4xl font-semibold text-forest-900">$89</span> <span class="text-forest-600">/ visit starting</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-forest-700">
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Dusting &amp; all surfaces</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Kitchen &amp; bathrooms</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Vacuuming &amp; mopping</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Trash removal</li>
+        </ul>
+        <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-800 transition-colors duration-200 hover:bg-forest-100 cursor-pointer">Book Essential Clean</a>
+      </div>
+
+      <div class="reveal relative flex h-full flex-col rounded-3xl bg-forest-800 p-8 text-sand-50 shadow-xl lg:-mt-4 lg:mb-4" style="--reveal-delay:.08s">
+        <span class="absolute -top-3 left-8 rounded-full bg-terracotta-500 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white">Most Popular</span>
+        <h3 class="font-display text-xl font-semibold">Deep Clean</h3>
+        <p class="mt-2 text-sm text-forest-200">For first-time visits or seasonal resets</p>
+        <p class="mt-6"><span class="font-display text-4xl font-semibold">$159</span> <span class="text-forest-200">/ visit starting</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-forest-100">
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-terracotta-300"><path d="M5 13l4 4L19 7"/></svg> Everything in Essential</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-terracotta-300"><path d="M5 13l4 4L19 7"/></svg> Inside cabinets &amp; appliances</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-terracotta-300"><path d="M5 13l4 4L19 7"/></svg> Baseboards &amp; window sills</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-terracotta-300"><path d="M5 13l4 4L19 7"/></svg> Detailed grout &amp; tile</li>
+        </ul>
+        <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-full bg-terracotta-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-terracotta-600 hover:shadow-md cursor-pointer">Book Deep Clean</a>
+      </div>
+
+      <div class="reveal flex h-full flex-col rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" style="--reveal-delay:.16s">
+        <h3 class="font-display text-xl font-semibold text-forest-900">Move In / Out</h3>
+        <p class="mt-2 text-sm text-forest-600">For move-day peace of mind</p>
+        <p class="mt-6"><span class="font-display text-4xl font-semibold text-forest-900">$219</span> <span class="text-forest-600">/ visit starting</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-forest-700">
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Everything in Deep Clean</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Inside fridge &amp; oven</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Closets &amp; storage areas</li>
+          <li class="flex gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-0.5 h-4 w-4 flex-shrink-0 text-forest-500"><path d="M5 13l4 4L19 7"/></svg> Damage-deposit checklist</li>
+        </ul>
+        <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-full border border-forest-300 px-6 py-3 text-sm font-semibold text-forest-800 transition-colors duration-200 hover:bg-forest-100 cursor-pointer">Book Move Clean</a>
+      </div>
+    </div>
+
+    <p class="reveal mt-8 text-center text-sm text-forest-600">Final pricing depends on home size, condition, and frequency. <a href="#contact" class="font-semibold text-forest-700 underline-offset-4 hover:underline">Get a free custom quote &rarr;</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">FAQ</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">Frequently asked questions</h2>
+    </div>
+
+    <div class="mt-10 space-y-4">
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:0s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            What areas do you serve?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>We proudly serve Austin, Round Rock, Cedar Park, Pflugerville, Georgetown, and Leander, TX. Not sure if you're in our area? Send us your zip code and we'll let you know.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:.04s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            Are your cleaners insured and background-checked?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>Yes. Every team member passes a background check and is bonded and insured before their first visit, so you can feel confident having them in your home or office.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:.08s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            What cleaning products do you use?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>We use plant-based, non-toxic products that are tough on grime but gentle on kids, pets, and the planet. If you have specific product preferences or allergies, just let us know.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:.12s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            Do I need to be home during the cleaning?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>Not at all. Many clients provide entry instructions (door code, lockbox, or key) and go about their day. We'll send a confirmation the moment your clean is complete.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:.16s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            What's your cancellation policy?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>You can reschedule or cancel free of charge up to 24 hours before your appointment. Cancellations within 24 hours may include a small fee to cover your pro's reserved time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal rounded-2xl border border-forest-100 bg-white" data-open="false" style="--reveal-delay:.2s">
+        <h3>
+          <button type="button" class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-display text-lg font-medium text-forest-900 cursor-pointer" aria-expanded="false">
+            How do I get a quote?
+            <svg class="faq-icon h-5 w-5 flex-shrink-0 text-forest-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div class="faq-panel">
+          <div class="px-6 pb-5 text-forest-700">
+            <p>Fill out the quick form below with a few details about your space, and we'll follow up with a custom quote &mdash; usually within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-forest-50/60 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+      <div class="reveal">
+        <p class="text-sm font-semibold uppercase tracking-widest text-forest-500">Get Started</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold text-forest-900 sm:text-4xl">Get your free quote in minutes</h2>
+        <p class="mt-4 text-lg text-forest-700">Tell us a bit about your space and schedule, and we'll follow up with a custom quote &mdash; usually within one business day.</p>
+
+        <dl class="mt-10 space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-600">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+                <path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 4.3 2h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>
+              </svg>
+            </div>
+            <div>
+              <dt class="font-semibold text-forest-900">Phone</dt>
+              <dd><a href="tel:+15125550148" class="text-forest-700 hover:text-forest-900">(512) 555-0148</a></dd>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-600">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+            </div>
+            <div>
+              <dt class="font-semibold text-forest-900">Email</dt>
+              <dd><a href="mailto:hello@sageandsprucecleaning.com" class="text-forest-700 hover:text-forest-900">hello@sageandsprucecleaning.com</a></dd>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-600">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+                <path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 1 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <dt class="font-semibold text-forest-900">Service Area</dt>
+              <dd class="text-forest-700">Greater Austin, TX &amp; surrounding suburbs</dd>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-600">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3.5 2"/>
+              </svg>
+            </div>
+            <div>
+              <dt class="font-semibold text-forest-900">Hours</dt>
+              <dd class="text-forest-700">Monday &ndash; Saturday, 7:00 AM &ndash; 7:00 PM</dd>
+            </div>
+          </div>
+        </dl>
+      </div>
+
+      <div class="reveal" style="--reveal-delay:.1s">
+        <form id="quote-form" class="rounded-3xl border border-forest-100 bg-white p-8 shadow-sm" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="sm:col-span-1">
+              <label for="name" class="mb-1.5 block text-sm font-medium text-forest-800">Full name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" class="w-full rounded-xl border border-forest-200 bg-sand-50 px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-400 focus:outline-none" placeholder="Jamie Rivera" />
+            </div>
+            <div class="sm:col-span-1">
+              <label for="email" class="mb-1.5 block text-sm font-medium text-forest-800">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" class="w-full rounded-xl border border-forest-200 bg-sand-50 px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-400 focus:outline-none" placeholder="jamie@email.com" />
+            </div>
+            <div class="sm:col-span-1">
+              <label for="phone" class="mb-1.5 block text-sm font-medium text-forest-800">Phone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" class="w-full rounded-xl border border-forest-200 bg-sand-50 px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-400 focus:outline-none" placeholder="(512) 555-0148" />
+            </div>
+            <div class="sm:col-span-1">
+              <label for="service" class="mb-1.5 block text-sm font-medium text-forest-800">Service needed</label>
+              <select id="service" name="service" required class="w-full rounded-xl border border-forest-200 bg-sand-50 px-4 py-3 text-forest-900 focus:border-forest-400 focus:outline-none">
+                <option value="">Select a service</option>
+                <option value="residential">Residential Cleaning</option>
+                <option value="deep">Deep Cleaning</option>
+                <option value="move">Move-In / Move-Out</option>
+                <option value="office">Office &amp; Commercial</option>
+                <option value="carpet">Carpet &amp; Upholstery</option>
+                <option value="construction">Post-Construction</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="message" class="mb-1.5 block text-sm font-medium text-forest-800">Tell us about your space</label>
+              <textarea id="message" name="message" rows="4" class="w-full rounded-xl border border-forest-200 bg-sand-50 px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-400 focus:outline-none" placeholder="Home size, number of bedrooms/bathrooms, preferred dates, etc."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-terracotta-500 px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-terracotta-600 hover:shadow-md cursor-pointer disabled:cursor-not-allowed disabled:opacity-70">
+            <span class="submit-label">Request My Quote</span>
+          </button>
+
+          <p id="form-status" class="mt-4 text-sm text-forest-700" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-forest-900 text-sand-100">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="#top" class="flex items-center gap-2 font-display text-lg font-semibold text-sand-50">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-forest-600 text-sand-50">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5">
+              <path d="M5 21c0-9 4-16 14-18-1 10-5 16-14 18z"/>
+              <path d="M6.5 19.5c2-3.5 5.5-7 11-9.5"/>
+            </svg>
+          </span>
+          Sage &amp; Spruce
+        </a>
+        <p class="mt-4 text-sm text-forest-300">Eco-friendly residential &amp; commercial cleaning, proudly serving Greater Austin, TX since 2014.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#" aria-label="Sage & Spruce on Instagram" class="flex h-10 w-10 items-center justify-center rounded-full border border-forest-700 text-forest-200 transition-colors hover:border-forest-500 hover:text-sand-50 cursor-pointer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.46.66.25 1.21.6 1.76 1.15.5.5.85 1.04 1.15 1.76.24.64.41 1.37.46 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.24-1.37.41-2.43.46-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.24-.64-.41-1.37-.46-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.46-2.43.25-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.43 2.54c.64-.24 1.37-.41 2.43-.46C8.94 2.01 9.3 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.97.04-1.5.2-1.85.34-.46.18-.79.39-1.14.74-.35.35-.56.68-.74 1.14-.14.35-.3.88-.34 1.85C3.81 9.01 3.8 9.33 3.8 12s.01 2.99.06 4.04c.04.97.2 1.5.34 1.85.18.46.39.79.74 1.14.35.35.68.56 1.14.74.35.14.88.3 1.85.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.39 1.14-.74.35-.35.56-.68.74-1.14.14-.35.3-.88.34-1.85.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.97-.2-1.5-.34-1.85a3.1 3.1 0 0 0-.74-1.14 3.1 3.1 0 0 0-1.14-.74c-.35-.14-.88-.3-1.85-.34C14.99 3.81 14.67 3.8 12 3.8zm0 3.07a5.13 5.13 0 1 1 0 10.26 5.13 5.13 0 0 1 0-10.26zm0 1.8a3.33 3.33 0 1 0 0 6.66 3.33 3.33 0 0 0 0-6.66zm5.34-3.27a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+          </a>
+          <a href="#" aria-label="Sage & Spruce on Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-forest-700 text-forest-200 transition-colors hover:border-forest-500 hover:text-sand-50 cursor-pointer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Sage & Spruce on X" class="flex h-10 w-10 items-center justify-center rounded-full border border-forest-700 text-forest-200 transition-colors hover:border-forest-500 hover:text-sand-50 cursor-pointer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5"><path d="M18.9 2H22l-7.2 8.2L23 22h-6.6l-5.2-6.8L5 22H2l7.7-8.8L1.3 2H8l4.7 6.2L18.9 2zm-2.3 18h1.8L7.5 4H5.6L16.6 20z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-sand-50">Services</h3>
+        <ul class="mt-4 space-y-3 text-sm text-forest-300">
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Residential Cleaning</a></li>
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Deep Cleaning</a></li>
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Move-In / Move-Out</a></li>
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Office &amp; Commercial</a></li>
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Carpet &amp; Upholstery</a></li>
+          <li><a href="#services" class="transition-colors hover:text-sand-50">Post-Construction</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-sand-50">Company</h3>
+        <ul class="mt-4 space-y-3 text-sm text-forest-300">
+          <li><a href="#process" class="transition-colors hover:text-sand-50">How It Works</a></li>
+          <li><a href="#pricing" class="transition-colors hover:text-sand-50">Pricing</a></li>
+          <li><a href="#reviews" class="transition-colors hover:text-sand-50">Reviews</a></li>
+          <li><a href="#faq" class="transition-colors hover:text-sand-50">FAQ</a></li>
+          <li><a href="#contact" class="transition-colors hover:text-sand-50">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-semibold uppercase tracking-widest text-sand-50">Stay Fresh</h3>
+        <p class="mt-4 text-sm text-forest-300">Seasonal cleaning tips and exclusive offers, once a month.</p>
+        <form class="mt-4" onsubmit="return false">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <div class="flex gap-2">
+            <input type="email" id="newsletter-email" name="newsletter-email" required placeholder="you@email.com" class="w-full rounded-full border border-forest-700 bg-forest-800 px-4 py-2.5 text-sm text-sand-50 placeholder:text-forest-400 focus:border-forest-400 focus:outline-none" />
+            <button type="submit" aria-label="Subscribe" class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-terracotta-500 text-white transition-colors hover:bg-terracotta-600 cursor-pointer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-forest-700 pt-8 text-sm text-forest-300 sm:flex-row">
+      <p>&copy; 2026 Sage &amp; Spruce Cleaning Co. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="transition-colors hover:text-sand-50">Privacy Policy</a>
+        <a href="#" class="transition-colors hover:text-sand-50">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 flex h-12 w-12 translate-y-4 items-center justify-center rounded-full bg-forest-700 text-sand-50 opacity-0 shadow-lg transition-all duration-300 pointer-events-none hover:bg-forest-800 cursor-pointer">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-5 w-5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- Mobile sticky CTA -->
+<div class="fixed inset-x-0 bottom-0 z-30 flex items-center gap-3 border-t border-forest-100 bg-sand-50/95 p-3 backdrop-blur md:hidden">
+  <a href="tel:+15125550148" aria-label="Call Sage and Spruce Cleaning Co." class="flex flex-1 items-center justify-center gap-2 rounded-full border border-forest-300 py-3 text-sm font-semibold text-forest-800 cursor-pointer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-4 w-4">
+      <path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 4.3 2h2.6a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.9 9.9a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>
+    </svg>
+    Call
+  </a>
+  <a href="#contact" class="flex flex-1 items-center justify-center gap-2 rounded-full bg-terracotta-500 py-3 text-sm font-semibold text-white cursor-pointer">Get a Free Quote</a>
+</div>
+
+<script>
+  // Mobile menu
+  (function () {
+    var menuBtn = document.getElementById('menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    if (!menuBtn || !menu) return;
+
+    function openMenu() {
+      menu.classList.remove('hidden');
+      requestAnimationFrame(function () {
+        menu.classList.add('is-open');
+      });
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      window.setTimeout(function () {
+        menu.classList.add('hidden');
+      }, 300);
+    }
+
+    menuBtn.addEventListener('click', function () {
+      var isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    menu.querySelectorAll('[data-menu-close]').forEach(function (el) {
+      el.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    });
+  })();
+
+  // Scroll reveal animations
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach(function (el) { observer.observe(el); });
+  })();
+
+  // Animated stat counters
+  (function () {
+    var counters = document.querySelectorAll('[data-count-to]');
+    if (!counters.length) return;
+
+    function animateCounter(el) {
+      var target = parseFloat(el.getAttribute('data-count-to'));
+      var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      var duration = 1600;
+      var start = null;
+
+      function step(timestamp) {
+        if (start === null) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = target * eased;
+        el.textContent = decimals > 0
+          ? value.toFixed(decimals)
+          : Math.round(value).toLocaleString('en-US');
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = decimals > 0
+            ? target.toFixed(decimals)
+            : target.toLocaleString('en-US');
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(animateCounter);
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach(function (el) { observer.observe(el); });
+  })();
+
+  // FAQ accordion
+  (function () {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function (item) {
+      var trigger = item.querySelector('.faq-trigger');
+      var panel = item.querySelector('.faq-panel');
+      if (!trigger || !panel) return;
+
+      trigger.addEventListener('click', function () {
+        var isOpen = item.getAttribute('data-open') === 'true';
+        item.setAttribute('data-open', String(!isOpen));
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  })();
+
+  // Back to top button
+  (function () {
+    var btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    function toggleVisibility() {
+      if (window.scrollY > 480) {
+        btn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      } else {
+        btn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      }
+    }
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // Quote form handling
+  (function () {
+    var form = document.getElementById('quote-form');
+    if (!form) return;
+
+    var status = document.getElementById('form-status');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.querySelector('.submit-label') : null;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        status.textContent = 'Please fill in all required fields with a valid email and phone number.';
+        status.classList.remove('text-forest-700');
+        status.classList.add('text-terracotta-600');
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Sending...';
+
+      window.setTimeout(function () {
+        status.classList.remove('text-terracotta-600');
+        status.classList.add('text-forest-700');
+        status.textContent = 'Thanks! Your request has been received — we’ll follow up within one business day.';
+        if (submitLabel) submitLabel.textContent = 'Request Sent';
+        form.reset();
+
+        window.setTimeout(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitLabel) submitLabel.textContent = 'Request My Quote';
+        }, 2200);
+      }, 900);
+    });
+  })();
+</script>
+
+</body>
+</html>
